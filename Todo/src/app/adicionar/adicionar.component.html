@@ -1,0 +1,17 @@
+<body>
+    <div>
+
+        <h1> {{titulo}} </h1>
+
+        <h3> Adicione sua Tarefa: </h3>
+        <input type="text" [(ngModel)]="add"> -
+        <button (click)="adicionar()" [disabled]="add === ''">Adicionar</button>
+
+        <ul *ngFor="let a of adicionado; let i = index">
+            <li>{{a.adicionado}} {{a.done ? '✔️' : '❌'}}</li>
+            <label>Concluir: <input type="checkbox" [(ngModel)]="a.done"> </label>
+            <button (click)="deletar(i)">Excluir</button>
+
+        </ul>
+    </div>
+</body>
